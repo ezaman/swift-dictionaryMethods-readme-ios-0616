@@ -45,16 +45,22 @@ let godfatherFilms = [
 ]
 
 
-// UPDATING KEYS
 
-let result1 = movies.updateValue(godfatherFilms, forKey: "The Godfather")
+// UPDATING KEYS
+movies.updateValue(godfatherFilms, forKey: "The Godfather")
+//let result1 = movies.updateValue(godfatherFilms, forKey: "The Godfather")
 let result2 = movies.updateValue(fastAndFuriousFilms, forKey: "The Fast and the Furious")
 
-print(result1)
+//print(result1)
 print(result2)
+
+
+print(movies["The Godfather"])
+print(movies)
 
 let films = movies["The Godfather"]
 print(films)
+print(movies["The Godfather"]) //this prints the same thing without assigning the value to a constant.
 
 if let godfatherMovies = movies["The Godfather"] {
     print(godfatherMovies)
@@ -85,12 +91,13 @@ movies["The Fast and the Furious"] = nil
 
 if let fast3rFilms = movies["The Fast and the Furious"] {
     print("\(fast3rFilms)")
+    
 } else {
     print("YAY! no more Fast & Furious movies!")
 }
 
 movies.removeValueForKey("The Fast and the Furious")
-
+//this can also be used to see if a key is in a dictionary or not. its main objective is to remove key/value but if there is no key/value, it will return nil.
 
 
 // COUNTING ITEMS
